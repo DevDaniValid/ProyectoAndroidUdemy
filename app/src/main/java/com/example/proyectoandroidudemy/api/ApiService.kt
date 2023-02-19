@@ -2,6 +2,8 @@ package com.example.proyectoandroidudemy.api
 
 import com.example.proyectoandroidudemy.BASE_URL
 import com.example.proyectoandroidudemy.Dog
+import com.example.proyectoandroidudemy.GET_ALL_DOGS_URL
+import com.example.proyectoandroidudemy.api.responses.DogListApiResponse
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -12,8 +14,8 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface  ApiService {
-    @GET("dogs")
-    suspend fun getAllDogs(): List<Dog>
+    @GET(GET_ALL_DOGS_URL)
+    suspend fun getAllDogs(): DogListApiResponse
 }
 
 object  DogsApi {
