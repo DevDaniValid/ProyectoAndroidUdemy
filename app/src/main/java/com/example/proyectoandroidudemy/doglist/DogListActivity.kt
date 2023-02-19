@@ -24,7 +24,7 @@ class DogListActivity : AppCompatActivity() {
         recycler.adapter = adapter
 
         dogListViewModel.dogList.observe(this){
-            dogList ->
+                dogList ->
             adapter.submitList(dogList)
         }
     }
